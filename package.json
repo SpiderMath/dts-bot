@@ -1,0 +1,18 @@
+{
+  "name": "dts-bot",
+  "version": "1.0.0",
+  "main": "src/index.ts",
+  "license": "MIT",
+  "scripts": {
+    "start": "ts-node-dev --respawn --transpile-only --poll ./src/index.ts"
+  },
+  "devDependencies": {
+    "ts-node": "^10.1.0",
+    "ts-node-dev": "^1.1.8",
+    "typescript": "^4.3.5"
+  },
+  "dependencies": {
+    "discord.js": "^12.5.3",
+    "mongoose": "^5.13.2"
+  }
+}
