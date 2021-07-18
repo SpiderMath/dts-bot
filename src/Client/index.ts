@@ -14,6 +14,10 @@ class ExtendedClient extends Client {
     public config: Config = ConfigJson;
     public aliases: Collection<string, Command> = new Collection();
 
+    constructor() {
+        super();
+    }
+
     public async init() {
         this.login(this.config.token);
         connect(this.config.mongoURI, {
@@ -29,6 +33,7 @@ class ExtendedClient extends Client {
 
             for(let file of commands) {
                 const { command } = require(`${commandPath}/${dir}/${file}`);
+                command.aliases = [];
                 this.commands.set(command.name, command);
 
                 if(command?.aliases.length !== 0) {
